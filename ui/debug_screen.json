@@ -1,0 +1,11 @@
+{
+  "namespace": "debug_screen",
+  "content_panel": {
+    "type": "panel",
+    "clips_children": false,
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {}
+    ]
+  }
+}
