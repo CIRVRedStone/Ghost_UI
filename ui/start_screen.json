@@ -75,7 +75,7 @@
   "player_panel": {
     "type": "panel",
     "layer": 1,
-    "size": [ 88, 16 ],
+    "size": [ 90, 16 ],
     "controls": [
       {
         "button@common.button": {
