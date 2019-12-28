@@ -93,6 +93,12 @@
             {
               "pressed@start.player_icon": { "$text_color": "$light_button_pressed_text_color" }
             }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#logged_in",
+              "binding_name_override": "#visible"
+            }
           ]
         }
       }
