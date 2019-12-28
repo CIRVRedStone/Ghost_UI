@@ -96,7 +96,7 @@
           ],
           "bindings": [
             {
-              "binding_name": "#logged_in",
+              "binding_name": "#gamertag_pic_and_label_visible",
               "binding_name_override": "#visible"
             }
           ]
