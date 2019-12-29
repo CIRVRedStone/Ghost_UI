@@ -71,6 +71,68 @@
       }
     ]
   },
+  "signingin": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100%", 12 ],
+    "controls": [
+      {
+        "label_panel": {
+          "type": "panel",
+          "size": [ "100%c", 12 ],
+          "controls": [
+            {
+              "signin_text": {
+                "type": "label",
+                "color": "$text_color",
+                "layer": 1,
+                "text": "#signingin_text",
+                "locked_alpha": 0.5,
+                "size": [ "default", "100%" ],
+                "offset": [ 0, 1.5 ],
+                "bindings": [
+                  {
+                    "binding_name": "#signingin_text"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "signin": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100%", 12 ],
+    "controls": [
+      {
+        "label_panel": {
+          "type": "panel",
+          "size": [ "100%c", 12 ],
+          "controls": [
+            {
+              "signin_text": {
+                "type": "label",
+                "color": "$text_color",
+                "layer": 1,
+                "text": "#platform_signin_text",
+                "locked_alpha": 0.5,
+                "size": [ "default", "100%" ],
+                "offset": [ 0, 1.5 ],
+                "bindings": [
+                  {
+                    "binding_name": "#platform_signin_text"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
 
   "player_panel": {
     "type": "panel",
@@ -78,7 +140,48 @@
     "size": [ 90, 16 ],
     "controls": [
       {
-        "button@common.button": {
+        "signin@common.button": {
+          "$pressed_button_name": "button.signin",
+          "size": [ "100%", 12 ],
+          "offset": [ 2, 2 ],
+          "controls": [
+            {
+              "default@start.signin": { "$text_color": "$light_button_hover_text_color" }
+            },
+            {
+              "hover@start.signin": { "$text_color": "$light_button_default_text_color" }
+            },
+            {
+              "pressed@start.signin": { "$text_color": "$light_button_pressed_text_color" }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#sign_in_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "signingin": {
+          "size": [ "100%", 12 ],
+          "offset": [ 2, 2 ],
+          "controls": [
+            {
+              "start.signingin": { "$text_color": "$light_button_hover_text_color" }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#signingin_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "player_icon@common.button": {
           "$pressed_button_name": "button.to_profile_screen",
           "$button_tts_header": "accessibility.start.profile",
           "size": [ "100%", 12 ],
