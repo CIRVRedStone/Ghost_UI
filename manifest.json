@@ -4,13 +4,13 @@
         "name": "Ghost Resource Pack",
         "description": "Paquete de recursos para mundos y servidores.\nEstado: en desarrollo.\nAuthor: CIRVRedStone.",
         "uuid": "19211f7b-e8a7-4ae6-a51e-90870da8ba99",
-        "version": [0,0,0],
+        "version": [0,0,1],
         "min_engine_version": [1,14,1]},
     "modules": [{
         "description": "Paquete de recursos para mundos y servidores.",
         "type": "resources",
         "uuid": "be996e03-bd0e-458c-9b5c-58c4a26fe3e9",
-        "version": [0,0,0]}],
+        "version": [0,0,1]}],
     "metadata": {
         "authors": ["CIRVRedStone"],
         "url": "https://twitter.com/CIRVRedStone"
