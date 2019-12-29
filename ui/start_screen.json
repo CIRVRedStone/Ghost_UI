@@ -167,15 +167,15 @@
         "signingin": {
           "size": [ "100%", 12 ],
           "offset": [ 2, 2 ],
-          "controls": [
-            {
-              "start.signingin": { "$text_color": "$light_button_hover_text_color" }
-            }
-          ],
+          "type": "label",
+          "text": "#signingin_text",
           "bindings": [
             {
               "binding_name": "#signingin_visible",
               "binding_name_override": "#visible"
+            },
+            {
+              "binding_name": "#signingin_text"
             }
           ]
         }
