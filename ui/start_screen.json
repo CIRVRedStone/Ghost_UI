@@ -1,12 +1,58 @@
 {
-    "namespace": "start",
+  "namespace": "start",
+  //---------------------------------------------------------------------------
+  // Realms Invite Panel
+  //---------------------------------------------------------------------------
+
+  "feedback_icon": {
+    "type": "image",
+    "texture": "$invite_texture",
+    "size": [ 20, 20 ]
+  },
+
+  "feedback_panel": {
+    "type": "panel",
+    "layer": 2,
+    "size": [ 24, 24 ],
+    "controls": [
+      {
+        "button@common_buttons.hyperlink_content_button": {
+          "size": [ 20, 20 ],
+          "offset": [ 2, 2 ],
+          "property_bag": {
+            "#hyperlink": "https://aka.ms/minecraftfb"
+          },
+          "controls": [
+            {
+              "default@start.feedback_icon": { "$invite_texture": "textures/ui/how_to_play_button_default_light" }
+            },
+            {
+              "hover@start.feedback_icon": { "$invite_texture": "textures/ui/how_to_play_button_hover_light" }
+            },
+            {
+              "pressed@start.feedback_icon": { "$invite_texture": "textures/ui/how_to_play_button_pressed_light" }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
   //---------------------------------------------------------------------------
   // Title Panel
   //---------------------------------------------------------------------------
   "title_image": {
     "type": "image",
-    "layer": 1,
+    "layer": 2,
     "texture": "textures/ui/title"
+  },
+  "top_img": {
+    "type": "image",
+    "texture": "textures/ui/background_top",
+    "layer": 1,
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [ "100%", 40 ]
   },
   "title_panel": {
     "type": "panel",
@@ -21,8 +67,46 @@
     ]
   },
 
-
-
+  //---------------------------------------------------------------------------
+  // Realms Invite Panel
+  //---------------------------------------------------------------------------
+  "invite_notification_icon": {
+    "type": "image",
+    "texture": "$invite_texture",
+    "size": [ 16, 16 ]
+  },
+  "realms_pending_invite_panel": {
+    "type": "panel",
+    "layer": 2,
+    "size": [ 20, 20 ],
+    "controls": [
+      {
+        "button@common.button": {
+          "$pressed_button_name": "button.menu_invite_notification",
+          "$button_tts_header": "realmsInvitationScreen.shareTitle",
+          "size": [ 16, 16 ],
+          "offset": [ 2, 2 ],
+          "controls": [
+            {
+              "default@start.invite_notification_icon": { "$invite_texture": "textures/ui/invite_base" }
+            },
+            {
+              "hover@start.invite_notification_icon": { "$invite_texture": "textures/ui/invite_hover" }
+            },
+            {
+              "pressed@start.invite_notification_icon": { "$invite_texture": "textures/ui/invite_pressed" }
+            }
+          ]
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#visible",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
   //---------------------------------------------------------------------------
   // Player Panel
   //---------------------------------------------------------------------------
@@ -65,7 +149,7 @@
       {
         "spacer": {
           "type": "panel",
-          "size": [ 1, 0 ]
+          "size": [ 2, 0 ]
         }
       },
       {
@@ -232,6 +316,13 @@
   },
 
 
+  
+
+
+
+
+
+
 
 
 
@@ -300,15 +391,30 @@
 
 
 
-
-
   "start_screen_content":{
     "type": "panel",
     "controls":[
       {
+        "top_img@start.top_img":{}
+      },
+      {
+        "feedback_panel@start.feedback_panel": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 10, 6 ]
+        }
+      },
+      {
         "title_panel@start.title_panel": {
           "anchor_from": "top_middle",
           "anchor_to": "top_middle"
+        }
+      },
+      {
+        "realms_pending_invite_panel@start.realms_pending_invite_panel": {
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "offset": [ -110, 10 ]
         }
       },
       {
@@ -326,12 +432,6 @@
       },
       {
         "text_panel@start.text_panel": {}
-      },
-      {
-        "realms_pending_invite_panel@start.realms_pending_invite_panel": {
-          "anchor_from": "top_left",
-          "anchor_to": "top_left"
-        }
       }
     ]
   }
