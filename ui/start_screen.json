@@ -404,36 +404,51 @@
   "play_button_icon@common.button": {
     "$pressed_button_name": "button.menu_play",
     "$text": "menu.play",
-    "$image": "textures/ui/play",
     "size": [ 101, 115 ],
     "offset": [ 0, 0 ],
     "controls": [
       {
-        "default@start.menu_button_content": { "$text_color": "$light_button_hover_text_color" }
+        "default@start.menu_button_content": {
+          "$image": "textures/ui/play",
+          "$text_color": "$light_button_hover_text_color"
+        }
       },
       {
-        "hover@start.menu_button_content": { "$text_color": "$light_button_default_text_color" }
+        "hover@start.menu_button_content": {
+          "$image": "textures/ui/play_hover",
+          "$text_color": "$light_button_default_text_color"
+        }
       },
       {
-        "pressed@start.menu_button_content": { "$text_color": "$light_button_pressed_text_color" }
+        "pressed@start.menu_button_content": {
+          "$image": "textures/ui/play_hover",
+          "$text_color": "$light_button_pressed_text_color"
+        }
       }
     ]
   },
   "marketplace_button_icon@common.button": {
     "$pressed_button_name": "button.menu_store",
     "$text": "menu.store",
-    "$image": "textures/ui/marketplace",
     "size": [ 101, 115 ],
     "offset": [ 0, 0 ],
     "controls": [
       {
-        "default@start.menu_button_content": { "$text_color": "$light_button_hover_text_color" }
+        "default@start.menu_button_content": {
+          "$image": "textures/ui/marketplace",
+          "$text_color": "$light_button_hover_text_color" }
       },
       {
-        "hover@start.menu_button_content": { "$text_color": "$light_button_default_text_color" }
+        "hover@start.menu_button_content": {
+          "$image": "textures/ui/marketplace_hover",
+          "$text_color": "$light_button_default_text_color"
+        }
       },
       {
-        "pressed@start.menu_button_content": { "$text_color": "$light_button_pressed_text_color" }
+        "pressed@start.menu_button_content": {
+          "$image": "textures/ui/marketplace_hover",
+          "$text_color": "$light_button_pressed_text_color"
+        }
       }
     ]
   },
@@ -496,20 +511,7 @@
     "type": "stack_panel",
     "size": [ "100%", "100%" ],
     "orientation": "vertical",
-    "$title_offset_padding|default": [ "100%", "10%" ],
-    "variables": [
-      {
-        "requires": "($pocket_screen)",
-        "$title_offset_padding": [ "100%", "5%" ]
-      }
-    ],
     "controls": [
-      {
-        "title_offset_padding": {
-          "type": "panel",
-          "size": "$title_offset_padding"
-        }
-      },
       {
         "padding_fill_1": {
           "type": "panel",
