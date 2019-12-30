@@ -37,6 +37,58 @@
       }
     ]
   },
+  "settings_panel": {
+    "type": "panel",
+    "layer": 2,
+    "size": [ 24, 24 ],
+    "controls": [
+      {
+        "button@common.button": {
+          "$pressed_button_name": "button.menu_settings",
+          "size": [ 20, 20 ],
+          "offset": [ 2, 2 ],
+          "controls": [
+            {
+              "default@start.feedback_icon": { "$invite_texture": "textures/ui/settings_glyph_2x" }
+            },
+            {
+              "hover@start.feedback_icon": { "$invite_texture": "textures/ui/settings_glyph_color_2x" }
+            },
+            {
+              "pressed@start.feedback_icon": { "$invite_texture": "textures/ui/settings_glyph_color_2x" }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "news_panel": {
+    "type": "panel",
+    "layer": 2,
+    "size": [ 24, 24 ],
+    "controls": [
+      {
+        "button@common.button": {
+          "$toggle_property_bag": {
+            "#panel_title": "menu.globalpacks"
+          },
+          "size": [ 20, 20 ],
+          "offset": [ 2, 2 ],
+          "controls": [
+            {
+              "default@start.feedback_icon": { "$invite_texture": "textures/ui/feedIcon" }
+            },
+            {
+              "hover@start.feedback_icon": { "$invite_texture": "textures/ui/feedIcon_hover" }
+            },
+            {
+              "pressed@start.feedback_icon": { "$invite_texture": "textures/ui/feedIcon_hover" }
+            }
+          ]
+        }
+      }
+    ]
+  },
   
   //---------------------------------------------------------------------------
   // Title Panel
@@ -566,6 +618,20 @@
           "offset": [ 10, 6 ]
         }
       },
+      {
+        "settings_panel@start.settings_panel": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 35, 6 ]
+        }
+      },/*
+      {
+        "news_panel@start.news_panel": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 60, 6 ]
+        }
+      },*/
       {
         "title_panel@start.title_panel": {
           "anchor_from": "top_middle",
