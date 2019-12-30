@@ -107,6 +107,7 @@
       }
     ]
   },
+
   //---------------------------------------------------------------------------
   // Player Panel
   //---------------------------------------------------------------------------
@@ -315,9 +316,168 @@
     ]
   },
 
+  //---------------------------------------------------------------------------
+  // Text Panel
+  //---------------------------------------------------------------------------
+  "ui_version": {
+    "type": "label",
+    "color": "$main_header_text_color",
+    "layer": 2,
+    "text": "UI v0.0.3",
+    "size": [ "default", 10 ],
+    "max_size": [ "100%", "100%" ],
+    "anchor_from": "top_right",
+    "anchor_to": "top_right"
+  },
+  "text_content": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%" ],
+    "offset": [ 5, 1 ],
+    "anchor_from": "bottom_right",
+    "anchor_to": "bottom_right",
+    "controls": [
+      {
+        "version@start.version": {}
+      },
+      {
+        "ui_version@start.ui_version": {}
+      }
+    ]
+  },
+  "text_panel": {
+    "type": "image",
+    "texture": "textures/ui/background_text",
+    "offset": [ 0, 0 ],
+    "layer": 2,
+    "size": [ 50, 22 ],
+    "anchor_from": "bottom_right",
+    "anchor_to": "bottom_right",
+    "controls": [
+      {
+        "content@start.text_content": {}
+      }
+    ]
+  },
 
-  
-
+  //---------------------------------------------------------------------------
+  // Menu Panel
+  //---------------------------------------------------------------------------
+  "menu_icon": {
+    "type": "image",
+    "texture": "$image",
+    "size": [ 101, 100 ]
+  },
+  "menu_text": {
+    "type": "panel",
+    "size": [ "100%", 10 ],
+    "controls": [
+      {
+        "text": {
+          "type": "label",
+          "color": "$text_color",
+          "layer": 2,
+          "text": "$text",
+          "size": [ "default", 10 ],
+          "max_size": [ "100%", "100%" ]
+        }
+      }
+    ]
+  },
+  "menu_button_content": {
+    "type": "stack_panel",
+    "size": [ 101, 115 ],
+    "controls": [
+      {
+        "menu_icon@start.menu_icon": {}
+      },
+      {
+        "spacer": {
+          "type": "panel",
+          "size": [ 101, 5 ]
+        }
+      },
+      {
+        "menu_text@start.menu_text": {}
+      }
+    ]
+  },
+  "play_button_icon@common.button": {
+    "$pressed_button_name": "button.menu_play",
+    "$text": "menu.play",
+    "$image": "textures/ui/play",
+    "size": [ 101, 115 ],
+    "offset": [ 0, 0 ],
+    "controls": [
+      {
+        "default@start.menu_button_content": { "$text_color": "$light_button_hover_text_color" }
+      },
+      {
+        "hover@start.menu_button_content": { "$text_color": "$light_button_default_text_color" }
+      },
+      {
+        "pressed@start.menu_button_content": { "$text_color": "$light_button_pressed_text_color" }
+      }
+    ]
+  },
+  "marketplace_button_icon@common.button": {
+    "$pressed_button_name": "button.menu_store",
+    "$text": "menu.store",
+    "$image": "textures/ui/marketplace",
+    "size": [ 101, 115 ],
+    "offset": [ 0, 0 ],
+    "controls": [
+      {
+        "default@start.menu_button_content": { "$text_color": "$light_button_hover_text_color" }
+      },
+      {
+        "hover@start.menu_button_content": { "$text_color": "$light_button_default_text_color" }
+      },
+      {
+        "pressed@start.menu_button_content": { "$text_color": "$light_button_pressed_text_color" }
+      }
+    ]
+  },
+  "stacked_row": {
+    "type": "panel",
+    "size": [ 101, 115 ]
+  },
+  "main_buttons_panel": {
+    "type": "panel",
+    "size": [ "100%c", "100%c" ],
+    "controls": [
+      {
+        "stacked_rows": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%c", "100%c" ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "controls": [
+            {
+              "stacked_row_0@start.stacked_row": {
+                "controls": [
+                  { "play_button@start.play_button_icon": {} }
+                ]
+              }
+            },
+            {
+              "spacer": {
+                "type": "panel",
+                "size": [ 5, 0 ]
+              }
+            },
+            {
+              "stacked_row_1@start.stacked_row": {
+                "controls": [
+                  { "marketplace_button@start.marketplace_button_icon": {} }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
 
 
 
@@ -353,7 +513,7 @@
       {
         "padding_fill_1": {
           "type": "panel",
-          "size": [ "100%", "fill" ]
+          "size": [ "100%", 90 ]
         }
       },
       {
@@ -425,13 +585,10 @@
         }
       },
       {
-        "skin_panel@start.skin_panel": { "layer": 1 }
+        "text_panel@start.text_panel": {}
       },
       {
         "main_buttons_and_title_panel@start.main_buttons_stack_panel": {}
-      },
-      {
-        "text_panel@start.text_panel": {}
       }
     ]
   }
