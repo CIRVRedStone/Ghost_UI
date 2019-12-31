@@ -1,7 +1,7 @@
 /********************************************************
 +*   Developed by CIRVRedStone.                            *
-+*   https://twitter.com/CIRVRedStone                            *
-+*   https://github.com/CIRVRedStone.                            *
++*   https://twitter.com/CIRVRedStone                      *
++*   https://github.com/CIRVRedStone                       *
 +*********************************************************/
 {
   "namespace": "start",
@@ -14,7 +14,6 @@
     "texture": "$invite_texture",
     "size": [ 20, 20 ]
   },
-
   "feedback_panel": {
     "type": "panel",
     "layer": 2,
@@ -550,20 +549,7 @@
       }
     ]
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
   "main_buttons_stack_panel": {
     "type": "stack_panel",
     "size": [ "100%", "100%" ],
